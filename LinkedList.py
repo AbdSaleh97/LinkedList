@@ -48,24 +48,11 @@ class LinkedList:
         current_index = 0
         while current:
             if current_index == index:
-                return current.data
+                return current.value
             current = current.next
             current_index += 1
         raise IndexError("Index out of range")
 
-    def __len__(self):
-        """
-        Get the number of nodes in the linked list.
-
-        Returns:
-        int: The number of nodes in the linked list.
-        """
-        length = 0
-        current = self.head
-        while current:
-            length += 1
-            current = current.next
-        return length
     
     def __str__(self):
         """
@@ -80,3 +67,17 @@ class LinkedList:
             result += str(current.val) + "-->"
             current = current.next
         return result
+
+    def __len__(self):
+        """
+        Get the number of nodes in the linked list.
+
+        Returns:
+        int: The number of nodes in the linked list.
+        """
+        length = 0
+        current = self.head
+        while current:
+            length += 1
+            current = current.next
+        return length
